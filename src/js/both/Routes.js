@@ -1,4 +1,15 @@
+
 Ext.define('Tualo.routes.Contenteditable', {
+    statics: {
+        load: async function () {
+            return [
+                {
+                    name: 'contenteditable',
+                    path: '#contenteditable'
+                }
+            ]
+        }
+    },
     url: 'contenteditable',
     handler: {
         action: function (token) {

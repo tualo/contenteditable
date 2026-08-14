@@ -7,6 +7,38 @@ Ext.define('Tualo.contenteditable.lazy.controller.TestPanel', {
     var view = me.getView();
     var contenteditable = view.contenteditablenumber;
     vm.set('contenteditable', contenteditable);
+  },
+  onBoldClick: function () {
+    var me = this;
+    var view = me.getView();
+    var contenteditable = view.down('#testdata').getEl().dom.querySelector('[contenteditable="true"]');
+    if (contenteditable) {
+      document.execCommand('bold', false, null);
+    }
+  },
+  onItalicClick: function () {
+    var me = this;
+    var view = me.getView();
+    var contenteditable = view.down('#testdata').getEl().dom.querySelector('[contenteditable="true"]');
+    if (contenteditable) {
+      document.execCommand('italic', false, null);
+    }
+  },
+  onOrangeColorClick: function () {
+    var me = this;
+    var view = me.getView();
+    var contenteditable = view.down('#testdata').getEl().dom.querySelector('[contenteditable="true"]');
+    if (contenteditable) {
+      document.execCommand('foreColor', false, 'orange');
+    }
+  },
+  onClearClick: function () {
+    var me = this;
+    var view = me.getView();
+    var contenteditable = view.down('#testdata').getEl().dom.querySelector('[contenteditable="true"]');
+    if (contenteditable) {
+      document.execCommand('removeFormat', false, null);
+    }
   }
 
 });

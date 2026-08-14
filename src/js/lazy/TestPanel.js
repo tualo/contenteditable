@@ -6,10 +6,7 @@ Ext.define('Tualo.contenteditable.lazy.TestPanel', {
     'Tualo.contenteditable.lazy.models.TestPanel',
     'Tualo.contenteditable.lazy.controller.TestPanel'
   ],
-  config: {
-    type: null,
-    contenteditablenumber: null
-  },
+
   controller: 'lazy_contenteditable_test_panel',
   viewModel: {
     type: 'lazy_contenteditable_test_panel'
@@ -23,11 +20,35 @@ Ext.define('Tualo.contenteditable.lazy.TestPanel', {
   bind: {
     title: '{title}'
   },
+  tbar: [
+    {
+      xtype: 'button',
+      text: 'B',
+      handler: 'onBoldClick'
+    },
+    {
+      xtype: 'button',
+      text: 'I',
+      handler: 'onItalicClick'
+    },
+    {
+      xtype: 'button',
+      text: 'Color Orange',
+      handler: 'onOrangeColorClick'
+    },
+    {
+      xtype: 'button',
+      text: 'Clear',
+      handler: 'onClearClick'
+    }
+  ],
   items: [
     {
       xtype: 'panel',
       itemId: 'testdata',
-      html: 'Testdaten für Contenteditable: <br> <pre>{contenteditable}</pre>'
+      bind: {
+        html: '{html}'
+      }
 
     }
   ],
